@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	//"io/ioutil"
@@ -95,6 +97,8 @@ func testaSite(site string) {
 }
 
 func lerSitesDoArquivo() []string {
+
+	var sites []string
 	arquivos, err := os.Open("sites.txt") //imprime local na memoria
 	/*arquivo, err := ioutil.ReadFile("site.txt") imprime tudo em bytes */
 	if err != nil {
@@ -102,11 +106,16 @@ func lerSitesDoArquivo() []string {
 	}
 
 	leitor := bufio.NewReader(arquivos)
-	lina, err := leitor.ReadString('\n')
+	for {
 
-	if err != nil {
-		fmt.Println("Ocorreu um erro:", err)
+		linha, err := leitor.ReadString('\n')
+		linha = strings.TrimSpace(linha)
+
+		sites = append(sites, linha)
+
+		if err == io.EOF {
+			break
+		}
 	}
-
-	return
+	return sites
 }
