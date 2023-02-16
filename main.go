@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"strings"
@@ -10,6 +11,7 @@ import (
 
 	//"io/ioutil"
 	"bufio"
+	"strconv"
 )
 
 const monitoramentos = 3
@@ -28,6 +30,7 @@ func main() {
 			iniciarMonitoramento()
 		case 2:
 			fmt.Println("Exibindo Logs...")
+			imprimeLogs()
 		case 0:
 			fmt.Println("Saindo do programa")
 			os.Exit(0)
@@ -72,7 +75,7 @@ func iniciarMonitoramento() {
 	sites := lerSitesDoArquivo()
 
 	for i := 0; i < monitoramentos; i++ {
-		fmt.Printf("--------------------------------------------------Monitoramento(%v)--------------------------------------------------\n\n1", i)
+		fmt.Printf("--------------------------------------------------Monitoramento(%v)--------------------------------------------------\n\n", i)
 		for i, site := range sites {
 			fmt.Print("Testando site: ", i, ": ", site, "\n\n")
 			testaSite(site)
@@ -94,6 +97,7 @@ func testaSite(site string) {
 		registraLog(site, true)
 	} else {
 		fmt.Print("Site: ", site, " esta com problemas. Status:", resposta.StatusCode, "\n\n")
+		registraLog(site, false)
 	}
 }
 
@@ -122,7 +126,24 @@ func lerSitesDoArquivo() []string {
 	return sites
 }
 
-
 func registraLog(site string, status bool) {
+
+	arquivo, err := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	if err != nil {
+		fmt.Println("erro: ", err)
+	}
+
+	arquivo.WriteString(time.Now().Format("02/01/2006 15:04:05") + " - " + site + "- online " + strconv.FormatBool(status) + "\n")
+
+	arquivo.Close()
+}
+
+func imprimeLogs() {
+	arquivo, err := ioutil.ReadFile("log.txt")
+
+	if err != nil {
+		fmt.Println("Error: ", err)
+	}
+	fmt.Println(string(arquivo))
 
 }
