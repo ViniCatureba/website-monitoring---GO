@@ -91,6 +91,7 @@ func testaSite(site string) {
 
 	if resposta.StatusCode == 200 {
 		fmt.Print("Site: ", site, " foi carregado com sucesso\n\n")
+		registraLog(site, true)
 	} else {
 		fmt.Print("Site: ", site, " esta com problemas. Status:", resposta.StatusCode, "\n\n")
 	}
@@ -117,5 +118,11 @@ func lerSitesDoArquivo() []string {
 			break
 		}
 	}
+	arquivos.Close()
 	return sites
+}
+
+
+func registraLog(site string, status bool) {
+
 }
