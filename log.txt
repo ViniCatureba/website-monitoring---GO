@@ -1,24 +1,4 @@
-16/02/2023 13:00:21 - https://random-status-code.herokuapp.com- online false
-16/02/2023 13:00:22 - https://www.alura.com.br- online true
-16/02/2023 13:00:22 - https://www.caelum.com.br- online true
-16/02/2023 13:00:23 - http://www.bananasfabio.com.br- online true
-16/02/2023 13:00:27 - https://random-status-code.herokuapp.com- online false
-16/02/2023 13:00:27 - https://www.alura.com.br- online true
-16/02/2023 13:00:27 - https://www.caelum.com.br- online true
-16/02/2023 13:00:28 - http://www.bananasfabio.com.br- online true
-16/02/2023 13:00:32 - https://random-status-code.herokuapp.com- online false
-16/02/2023 13:00:32 - https://www.alura.com.br- online true
-16/02/2023 13:00:32 - https://www.caelum.com.br- online true
-16/02/2023 13:00:32 - http://www.bananasfabio.com.br- online true
-16/02/2023 13:04:33 - https://random-status-code.herokuapp.com- online false
-16/02/2023 13:04:33 - https://www.alura.com.br- online true
-16/02/2023 13:04:34 - https://www.caelum.com.br- online true
-16/02/2023 13:04:34 - http://www.bananasfabio.com.br- online true
-16/02/2023 13:04:38 - https://random-status-code.herokuapp.com- online false
-16/02/2023 13:04:38 - https://www.alura.com.br- online true
-16/02/2023 13:04:38 - https://www.caelum.com.br- online true
-16/02/2023 13:04:39 - http://www.bananasfabio.com.br- online true
-16/02/2023 13:04:42 - https://random-status-code.herokuapp.com- online false
-16/02/2023 13:04:43 - https://www.alura.com.br- online true
-16/02/2023 13:04:43 - https://www.caelum.com.br- online true
-16/02/2023 13:04:43 - http://www.bananasfabio.com.br- online true
+17/02/2023 10:23:12 - https://www.globo.com/ - online: true
+17/02/2023 10:23:17 - https://www.globo.com/ - online: true
+17/02/2023 10:23:22 - https://www.globo.com/ - online: true
+17/02/2023 10:23:27 - https://www.globo.com/ - online: true
